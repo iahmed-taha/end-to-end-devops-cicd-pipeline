@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammed Ahmeduddin Taha | Cloud Platform Engineer</title>
+<meta name="description" content="Portfolio of Mohammed Ahmeduddin Taha, AWS Cloud Engineer in Hyderabad. EC2, VPC, IAM, S3, Docker and Linux.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f6f9;--surface:#fff;--ink:#14202e;--muted:#52606f;--line:#d9e0e8;--teal:#0b6e75;--teal-soft:#dff1f2;--amber:#c76a00;--amber-soft:#fdeed8;
+--head:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;--body:'Source Sans 3','Segoe UI',Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1823;--surface:#17232f;--ink:#e8eef4;--muted:#9fb0c0;--line:#2a3a4a;--teal:#4fc3cb;--teal-soft:#16343a;--amber:#f2a64a;--amber-soft:#3a2a14}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--body)}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font:800 19px var(--head);color:var(--ink);text-decoration:none}
+nav a{color:var(--muted);text-decoration:none;margin-left:22px;font-weight:600;font-size:16px}
+nav a:hover{color:var(--teal)}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+.hero{padding:72px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(38px,5.4vw,60px);font-weight:800;letter-spacing:-.02em}
+.role{font:500 22px var(--head);color:var(--teal);margin:14px 0 18px}
+.hero p{color:var(--muted);max-width:52ch;margin:0 0 26px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--teal)}
+.btn.primary{background:var(--teal);color:var(--bg)}
+.btn.ghost{color:var(--teal)}
+.btn:hover{transform:translateY(-1px)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;color:var(--muted);font-size:16px}
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
+.diagram svg{width:100%;height:auto;display:block}
+.diagram .cap{font-size:14px;color:var(--muted);margin:8px 4px 0}
+.d-box{fill:var(--surface);stroke:var(--line);stroke-width:1.5}
+.d-vpc{fill:none;stroke:var(--teal);stroke-width:2;stroke-dasharray:7 5}
+.d-pub{fill:var(--teal-soft);stroke:var(--teal);stroke-width:1.5}
+.d-prv{fill:var(--amber-soft);stroke:var(--amber);stroke-width:1.5}
+.d-t{font:600 12px var(--body);fill:var(--ink)}
+.d-s{font:400 11px var(--body);fill:var(--muted)}
+.d-l{stroke:var(--muted);stroke-width:1.5;fill:none}
+@media (prefers-reduced-motion:no-preference){.flow{stroke-dasharray:5 6;animation:dash 1.4s linear infinite}@keyframes dash{to{stroke-dashoffset:-22}}}
+section{padding:60px 0;border-top:1px solid var(--line)}
+section h2{font-size:34px;margin-bottom:28px;letter-spacing:-.01em}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p{margin:0 0 14px;color:var(--muted)}
+.about p:first-child{color:var(--ink);font-size:20px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{border-left:4px solid var(--teal);padding:4px 0 4px 18px}
+.skill:nth-child(even){border-color:var(--amber)}
+.skill h3{font-size:19px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:0;padding:0;list-style:none}
+.chips li{background:var(--teal-soft);color:var(--ink);font-size:15px;padding:3px 11px;border-radius:99px}
+.proj{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:30px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj h3{font-size:24px;margin-bottom:12px}
+.proj ul{margin:0;padding-left:20px;color:var(--muted)}
+.proj li{margin-bottom:8px}
+.proj li::marker{color:var(--teal)}
+.edu{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:26px 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.edu h3{font-size:22px}
+.edu p{margin:4px 0 0;color:var(--muted)}
+.edu .yrs{font:700 20px var(--head);color:var(--amber)}
+.focus{margin-top:22px;color:var(--muted)}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.contact p{color:var(--muted);margin:0}
+.clist{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.clist li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.clist span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:15px}
+@media (max-width:860px){.hero .wrap,.about,.contact,.proj{grid-template-columns:1fr}.skills{grid-template-columns:1fr 1fr}nav a{margin-left:14px}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}nav .hide{display:none}.hero{padding-top:44px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">M. A. Taha</a>
+    <nav aria-label="Main"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a class="hide" href="#education">Education</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Mohammed Ahmeduddin Taha</h1>
+      <div class="role">Cloud Platform Engineer | AWS Cloud Engineer</div>
+      <p>I build and deploy AWS infrastructure: highly available web apps, custom VPC networks, least-privilege IAM and Dockerized applications on Linux.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn ghost" href="mailto:mahmed8056@gmail.com">Email me</a>
+      </div>
+      <div class="facts"><span>Hyderabad, India</span><span>B.E. Computer Science, 2026</span></div>
+    </div>
+    <figure class="diagram" style="margin:0">
+      <svg viewBox="0 0 440 320" role="img" aria-label="Diagram of a highly available AWS architecture: a load balancer in front of EC2 instances in two availability zones inside a VPC, with S3 and IAM alongside">
+        <rect class="d-box" x="2" y="2" width="436" height="316" rx="10"/>
+        <text class="d-s" x="14" y="22">AWS Region</text>
+        <rect class="d-vpc" x="14" y="32" width="412" height="276" rx="8"/>
+        <text class="d-t" x="26" y="52">Custom VPC</text>
+        <rect class="d-pub" x="150" y="62" width="130" height="34" rx="6"/>
+        <text class="d-t" x="215" y="84" text-anchor="middle">Elastic Load Balancer</text>
+        <rect class="d-box" x="26" y="120" width="190" height="178" rx="6"/>
+        <text class="d-s" x="36" y="138">Availability Zone A</text>
+        <rect class="d-box" x="226" y="120" width="190" height="178" rx="6"/>
+        <text class="d-s" x="236" y="138">Availability Zone B</text>
+        <rect class="d-pub" x="38" y="148" width="166" height="62" rx="6"/>
+        <text class="d-t" x="121" y="172" text-anchor="middle">Public subnet</text>
+        <text class="d-s" x="121" y="192" text-anchor="middle">EC2 (Auto Scaling Group)</text>
+        <rect class="d-pub" x="238" y="148" width="166" height="62" rx="6"/>
+        <text class="d-t" x="321" y="172" text-anchor="middle">Public subnet</text>
+        <text class="d-s" x="321" y="192" text-anchor="middle">EC2 (Auto Scaling Group)</text>
+        <rect class="d-prv" x="38" y="228" width="166" height="58" rx="6"/>
+        <text class="d-t" x="121" y="252" text-anchor="middle">Private subnet</text>
+        <text class="d-s" x="121" y="270" text-anchor="middle">Route table, security group</text>
+        <rect class="d-prv" x="238" y="228" width="166" height="58" rx="6"/>
+        <text class="d-t" x="321" y="252" text-anchor="middle">Private subnet</text>
+        <text class="d-s" x="321" y="270" text-anchor="middle">Route table, security group</text>
+        <path class="d-l flow" d="M185 96 L121 148"/><path class="d-l flow" d="M245 96 L321 148"/>
+        <rect class="d-box" x="316" y="60" width="50" height="38" rx="6"/><text class="d-t" x="341" y="84" text-anchor="middle">S3</text>
+        <rect class="d-box" x="374" y="60" width="44" height="38" rx="6"/><text class="d-t" x="396" y="84" text-anchor="middle">IAM</text>
+      </svg>
+      <figcaption class="cap">Architecture from my Scalable Web Application project.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <div class="about">
+      <p>I'm a Computer Science and Engineering graduate who learns cloud engineering by building it, through hands-on projects and labs on AWS.</p>
+      <div>
+        <p>I'm familiar with cloud networking, access control, high availability, application deployment and infrastructure troubleshooting.</p>
+        <p>I'm most interested in cloud automation, secure infrastructure design, performance optimization and reliable platform engineering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Technical skills</h2>
+    <div class="skills">
+      <div class="skill"><h3>Cloud platform</h3><ul class="chips"><li>AWS EC2</li><li>VPC</li><li>S3</li><li>IAM</li><li>ELB</li><li>Auto Scaling</li></ul></div>
+      <div class="skill"><h3>Cloud networking</h3><ul class="chips"><li>VPC</li><li>Public/private subnets</li><li>Route tables</li><li>Security groups</li><li>Load balancing</li></ul></div>
+      <div class="skill"><h3>Cloud security</h3><ul class="chips"><li>IAM users, roles, policies</li><li>Least privilege</li><li>S3 access control</li></ul></div>
+      <div class="skill"><h3>Operating systems</h3><ul class="chips"><li>Linux</li><li>Ubuntu</li><li>CentOS</li><li>Command line</li></ul></div>
+      <div class="skill"><h3>Containerization</h3><ul class="chips"><li>Docker</li><li>Dockerfiles</li><li>Images</li><li>Containers</li><li>App deployment</li></ul></div>
+      <div class="skill"><h3>Automation and version control</h3><ul class="chips"><li>Shell/Bash basics</li><li>Git</li><li>GitHub</li><li>Deployment scripts</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <article class="proj">
+      <div><h3>Scalable Web Application Deployment on AWS</h3><ul class="chips"><li>EC2</li><li>VPC</li><li>ELB</li><li>ASG</li><li>S3</li><li>IAM</li></ul></div>
+      <ul>
+        <li>Designed and deployed a highly available web application with EC2 instances across multiple Availability Zones in a custom VPC.</li>
+        <li>Configured an Elastic Load Balancer and Auto Scaling Group to distribute traffic and scale with demand.</li>
+        <li>Set up IAM roles and policies following least privilege for access to AWS resources.</li>
+        <li>Used Amazon S3 for static asset storage and backups.</li>
+      </ul>
+    </article>
+    <article class="proj">
+      <div><h3>Dockerized Application Deployment</h3><ul class="chips"><li>Docker</li><li>Git</li><li>GitHub</li><li>Linux</li></ul></div>
+      <ul>
+        <li>Containerized a multi-tier application and wrote Dockerfiles to package its dependencies for consistent deployment.</li>
+        <li>Managed source code and deployment scripts in Git and GitHub with a structured branching workflow.</li>
+        <li>Deployed and tested containers on Linux, troubleshooting runtime and networking issues.</li>
+      </ul>
+    </article>
+    <article class="proj">
+      <div><h3>Cloud Infrastructure Fundamentals Lab</h3><ul class="chips"><li>VPC</li><li>S3</li><li>IAM</li></ul></div>
+      <ul>
+        <li>Built a custom VPC with public and private subnets, route tables and security groups, following production-style network design.</li>
+        <li>Practised IAM user, role and policy management.</li>
+        <li>Configured S3 storage, versioning and access controls.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="edu">
+      <div><h3>Bachelor of Engineering (B.E.), Computer Science and Engineering</h3><p>Osmania University, Hyderabad, India</p></div>
+      <div class="yrs">2022 – 2026</div>
+    </div>
+    <p class="focus">Currently strengthening my cloud infrastructure, scripting and DevOps skills through practical projects, and comfortable troubleshooting deployments from the Linux command line.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Get in touch</h2>
+    <div class="contact">
+      <p>I'm looking for cloud engineering opportunities. Send me a message and I'll reply soon.</p>
+      <ul class="clist">
+        <li><span>Email</span><a href="mailto:mahmed8056@gmail.com">mahmed8056@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+917406306092">+91 74063 06092</a></li>
+        <li><span>LinkedIn</span><a href="#" rel="noopener">Add your LinkedIn URL</a></li>
+        <li><span>GitHub</span><a href="#" rel="noopener">Add your GitHub URL</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">&copy; 2026 Mohammed Ahmeduddin Taha. Hyderabad, India.</div></footer>
+</body>
+</html>
