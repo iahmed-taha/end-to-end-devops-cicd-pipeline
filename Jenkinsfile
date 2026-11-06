@@ -36,6 +36,24 @@ pipeline {
                 }
             }
         }
+        
+        stage('Deploy to AWS EC2') {
+            steps {
+              sh '''
+            docker pull tahaahmed123/devops-cicd:v1
+
+            docker rm -f devops-cicd-container || true
+
+            docker run -d \
+                --name devops-cicd-container \
+                -p 8082:80 \
+                tahaahmed123/devops-cicd:v1
+
+            docker ps
+        '''
+    }
+}
+
     }
 
     post {
